@@ -1,13 +1,17 @@
 // react
-import { FC } from 'react';
+import { FC } from "react";
+//ui
+import { Button } from "@/shared/ui";
 // styles
-import styles from './Describe.module.scss';
+import styles from "./HeaderDescribe.module.scss";
 
-interface DescribeProps {}
+interface HeaderDescribeProps {}
 
-export const Describe: FC<DescribeProps> = ({}) => {
+export const HeaderDescribe: FC<HeaderDescribeProps> = ({}) => {
+  const onSignUpClick = () => {};
+
   return (
-    <div className={styles.Describe}>
+    <div className={styles.HeaderDescribe}>
       <h1>Test assignment for front-end developer</h1>
       <p>
         What defines a good front-end developer is one that has skilled
@@ -16,6 +20,7 @@ export const Describe: FC<DescribeProps> = ({}) => {
         mind. They should also be excited to learn, as the world of Front-End
         Development keeps evolving.
       </p>
+      <Button onClick={onSignUpClick}>Sign up</Button>
     </div>
   );
 };

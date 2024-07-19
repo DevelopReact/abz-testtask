@@ -1,0 +1,18 @@
+@import "@/app/styles/mixins/mixins.scss";
+@import "@/app/styles/variables/fontColor";
+
+.HeaderNavMenu {
+  width: 360px;
+  height: 60px;
+  @include FlexContainer(space-between);
+  padding: 13px 16px;
+}
+
+.Logo {
+  @include FlexContainer();
+}
+
+.Menu {
+  @include FlexContainer();
+  gap: 10px;
+}

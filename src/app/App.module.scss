@@ -1,0 +1,6 @@
+@import "@/app/styles/mixins/mixins.scss";
+
+.App {
+  font-family: Nunito;
+  @include FlexContainer();
+}
