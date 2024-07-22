@@ -1,6 +1,8 @@
 @import "@/app/styles/mixins/mixins.scss";
+@import "@/app/styles/variables/backgroundColor";
 
 .App {
   font-family: Nunito;
   @include FlexContainer();
+  background-color: $mainBackgroundColor;
 }
