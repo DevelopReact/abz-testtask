@@ -1,0 +1,15 @@
+@import "@/app/styles/mixins/mixins.scss";
+@import "@/app/styles/variables/fontColor.scss";
+
+.UserForm {
+  width: 100%;
+  @include FlexDirection();
+  gap: 50px;
+}
+
+.PositionSelects {
+  width: 100%;
+  @include FlexDirection();
+  align-items: start;
+  gap: 10px;
+}

@@ -1,0 +1,15 @@
+@import "@/app/styles/mixins/mixins.scss";
+@import "@/app/styles/variables/fontColor.scss";
+@import "@/app/styles/variables/backgroundColor.scss";
+
+.Input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(208, 207, 207, 1);
+  border-radius: 4px;
+  background-color: $mainBackgroundColor;
+}
+
+::placeholder {
+  color: #7e7e7e;
+}

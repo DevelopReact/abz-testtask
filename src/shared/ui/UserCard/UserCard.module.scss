@@ -1,0 +1,31 @@
+@import "@/app/styles/variables/backgroundColor.scss";
+@import "@/app/styles/mixins/mixins.scss";
+
+.UserCard {
+  width: 100%;
+  height: 254px;
+  padding: 20px;
+  background-color: $thirdBackgroundColor;
+  border-radius: 10px;
+  @include FlexDirection();
+  gap: 20px;
+}
+
+.userImage {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  @include FlexContainer();
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.userContact {
+  @include FlexDirection();
+  line-height: 26px;
+}

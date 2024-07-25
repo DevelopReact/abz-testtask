@@ -1,0 +1,28 @@
+@import "@/app/styles/mixins/mixins.scss";
+
+.RadioButton {
+  @include FlexContainer();
+  gap: 12px;
+}
+
+.IconRadioButton {
+  width: 20px;
+  height: 20px;
+  @include FlexContainer();
+  border-radius: 50%;
+}
+
+.checkedBorder {
+  border: 1px solid rgba(0, 189, 211, 1);
+}
+
+.disabledBorder {
+  border: 1px solid rgba(208, 207, 207, 1);
+}
+
+.Ellipse {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(0, 189, 211, 1);
+  border-radius: 50%;
+}

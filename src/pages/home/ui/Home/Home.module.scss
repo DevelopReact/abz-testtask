@@ -1,0 +1,7 @@
+@import "@/app/styles/mixins/mixins.scss";
+
+.Home {
+  width: 360px;
+  @include FlexDirection();
+  gap: 140px;
+}
