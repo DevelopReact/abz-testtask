@@ -3,7 +3,7 @@
 @import "@/app/styles/variables/backgroundColor";
 
 .HeaderNavMenu {
-  width: 360px;
+  width: 100%;
   height: 60px;
   @include FlexContainer(space-between);
   padding: 13px 16px;

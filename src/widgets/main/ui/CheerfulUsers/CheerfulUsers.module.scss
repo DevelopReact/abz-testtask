@@ -23,6 +23,20 @@
 
 .userCars {
   width: 100%;
-  @include FlexDirection();
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
+
+  @media (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 1024px;
+  }
+
+  @media (min-width: 1170px) {
+    width: 1170px;
+  }
 }

@@ -1,22 +1,26 @@
 // react
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react';
+//lib
+import classNames from 'classnames';
 // styles
-import styles from './Button.module.scss'
+import styles from './Button.module.scss';
 
-interface ButtonProps{
-    children: ReactNode;
-    onClick: () => void;
-    disabled?: boolean
+interface ButtonProps {
+  children: ReactNode;
+  onClick: () => void;
+  disabled?: boolean;
 }
 
-export const Button: FC<ButtonProps> = ({children, onClick, disabled}) => {
-return (
-<button 
-onClick = {onClick}
-disabled={disabled}
-className={styles.Button}
->
-    {children}
-</button>
-)
-}
+export const Button: FC<ButtonProps> = ({ children, onClick, disabled }) => {
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={classNames(styles.Button, {
+        [styles.disabledButton]: disabled
+      })}
+    >
+      {children}
+    </button>
+  );
+};

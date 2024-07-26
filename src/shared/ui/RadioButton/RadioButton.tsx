@@ -1,31 +1,31 @@
 // react
-import { FC } from "react";
+import { FC } from 'react';
 //lib
-import classNames from "classnames";
+import classNames from 'classnames';
 // styles
-import styles from "./RadioButton.module.scss";
+import styles from './RadioButton.module.scss';
 
 interface RadioButtonProps {
   label: string;
-  onClick: () => void;
-  borderColor: "checked" | "disabled";
+  checked: boolean;
+  onChange: () => void;
 }
 
 export const RadioButton: FC<RadioButtonProps> = ({
   label,
-  onClick,
-  borderColor,
+  checked,
+  onChange
 }) => {
   return (
     <div className={styles.RadioButton}>
       <div
-        onClick={onClick}
+        onClick={onChange}
         className={classNames(styles.IconRadioButton, {
-          [styles.checkedBorder]: borderColor === "checked",
-          [styles.disabledBorder]: borderColor === "disabled",
+          [styles.activeBorder]: checked,
+          [styles.disabledBorder]: !checked
         })}
       >
-        <div className={styles.Ellipse}></div>
+        {checked && <div className={styles.Ellipse}></div>}
       </div>
       {label}
     </div>

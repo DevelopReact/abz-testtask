@@ -14,10 +14,7 @@
   &::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background-image: url("@/shared/libs/assets/jpg/image.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,21 +25,26 @@
   &::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background-color: $secondaryBackgroundColor;
     z-index: 2;
   }
 
   h1,
   p {
-    width: 328px;
+    width: 100%;
     font-weight: 400;
     text-align: center;
     position: relative;
     z-index: 3;
+
+    @media (min-width: 360px) {
+      width: 328px;
+    }
+
+    @media (min-width: 768px) {
+      width: 380px;
+    }
   }
 
   h1 {

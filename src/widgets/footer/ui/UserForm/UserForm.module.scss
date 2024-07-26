@@ -1,10 +1,29 @@
-@import "@/app/styles/mixins/mixins.scss";
-@import "@/app/styles/variables/fontColor.scss";
+@import '@/app/styles/mixins/mixins.scss';
+@import '@/app/styles/variables/fontColor.scss';
 
 .UserForm {
   width: 100%;
   @include FlexDirection();
   gap: 50px;
+  padding-bottom: 100px;
+
+  @media (min-width: 360px) {
+    width: 360px;
+  }
+
+  @media (min-width: 768px) {
+    width: 380px;
+  }
+}
+
+.phoneTextForm {
+
+  span {
+    padding: 14px 16px;
+    font-size: 12px;
+    line-height: 14px;
+    color: $placeholderColor;
+  }
 }
 
 .PositionSelects {
@@ -12,4 +31,36 @@
   @include FlexDirection();
   align-items: start;
   gap: 10px;
+
+  p{
+    padding-bottom: 5px;
+  }
+}
+
+.Photo {
+  width: 100%;
+  height: 54px;
+  @include FlexContainer();
+}
+
+.UploadButton {
+  padding: 14px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.87);
+  border-radius: 4px 0 0 4px;
+  color: $mainTextColor;
+  cursor: pointer;
+}
+
+.FileUpload {
+  width: 100%;
+  padding: 14px 15px;
+  border-top: 1px solid rgba(208, 207, 207, 1);
+  border-right: 1px solid rgba(208, 207, 207, 1);
+  border-bottom: 1px solid rgba(208, 207, 207, 1);
+  border-radius: 0 4px 4px 0;
+  color: $placeholderColor;
+
+  input {
+    display: none;
+  }
 }

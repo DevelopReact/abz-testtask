@@ -11,5 +11,7 @@
 }
 
 ::placeholder {
-  color: #7e7e7e;
+  color: $placeholderColor;
+  font-size: 16px;
+  line-height: 26px;
 }
