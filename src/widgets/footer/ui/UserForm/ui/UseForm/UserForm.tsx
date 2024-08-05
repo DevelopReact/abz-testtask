@@ -1,6 +1,7 @@
 import { ChangeEvent, FC, useState } from 'react';
 import { useForm } from 'react-hook-form';
 //lib
+import classNames from 'classnames';
 import { yupResolver } from '@hookform/resolvers/yup';
 //api
 import {
@@ -16,7 +17,6 @@ import { IUser } from '@/entities/users/types/userTypes';
 import { userFormValidationSchema } from '../../libs/validationSchema/userFormValidationSchema';
 // styles
 import styles from './UserForm.module.scss';
-import classNames from 'classnames';
 
 interface UserFormProps {}
 

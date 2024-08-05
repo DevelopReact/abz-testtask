@@ -5,9 +5,10 @@ import {
   UseFormRegisterReturn,
   UseFormSetValue
 } from 'react-hook-form';
+//lib
+import classNames from 'classnames';
 // styles
 import styles from './Input.module.scss';
-import classNames from 'classnames';
 
 interface InputProps {
   id?: string;

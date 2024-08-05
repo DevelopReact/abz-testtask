@@ -1,12 +1,7 @@
 import * as yup from 'yup';
-import imageSize from 'image-size';
 
 // Максимальний розмір файлу в байтах (5MB)
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
-
-// Мінімальні розміри зображення
-const MIN_WIDTH = 70;
-const MIN_HEIGHT = 70;
 
 // Дозволені формати зображення
 const SUPPORTED_FORMATS = ['image/jpeg', 'image/jpg'];
