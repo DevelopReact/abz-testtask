@@ -1,0 +1,12 @@
+@import '@/app/styles/mixins/mixins.scss';
+
+.PositionsList {
+	width: 100%;
+	@include FlexDirection();
+	align-items: start;
+	gap: 10px;
+
+	p {
+		padding-bottom: 5px;
+	}
+}

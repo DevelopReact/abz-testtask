@@ -4,6 +4,7 @@
   width: 100%;
   @include FlexDirection();
   gap: 140px;
+  position: relative;
 
   @media (min-width: 360px) {
     width: 360px;

@@ -1,31 +1,33 @@
 // react
-import { FC } from "react";
+import { FC } from 'react';
 // styles
-import styles from "./UserCard.module.scss";
+import styles from './UserCard.module.scss';
 
-import Takamaru from "../../libs/assets/png/takamaru.png";
+interface UserCardProps {
+  name: string;
+  photo: string;
+  position: string;
+  email: string;
+  phone: string;
+}
 
-interface UserCardProps {}
-
-export const UserCard: FC<UserCardProps> = ({}) => {
+export const UserCard: FC<UserCardProps> = ({
+  name,
+  photo,
+  position,
+  email,
+  phone
+}) => {
   return (
     <div className={styles.UserCard}>
       <div className={styles.userImage}>
-        <img src={Takamaru} alt="Takamaru"/>
+        <img src={photo} alt={name} />
       </div>
-      <div className={styles.userName}>
-        <p>Takamaru Ayako Jurrien</p>
-      </div>
+      <div className={styles.userName}>{name}</div>
       <div className={styles.userContact}>
-        <div className={styles.userRole}>
-          <p>Lead Independent Director</p>
-        </div>
-        <div className={styles.userEmail}>
-          <p>Takamuru@gmail.com</p>
-        </div>
-        <div className={styles.userPhone}>
-          <p>+38 (098) 278 90 24</p>
-        </div>
+        <div className={styles.userRole}>{position}</div>
+        <div className={styles.userEmail}>{email}</div>
+        <div className={styles.userPhone}>{phone}</div>
       </div>
     </div>
   );

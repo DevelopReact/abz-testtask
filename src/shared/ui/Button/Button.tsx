@@ -7,8 +7,9 @@ import styles from './Button.module.scss';
 
 interface ButtonProps {
   children: ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   disabled?: boolean;
+  type: 'submit' | 'reset' | 'button';
 }
 
 export const Button: FC<ButtonProps> = ({ children, onClick, disabled }) => {

@@ -1,22 +1,56 @@
 // react
-import { FC } from "react";
-import { UseFormRegisterReturn } from "react-hook-form";
+import { ChangeEvent, FC, useEffect } from 'react';
+import {
+  FieldValues,
+  UseFormRegisterReturn,
+  UseFormSetValue
+} from 'react-hook-form';
 // styles
-import styles from "./Input.module.scss";
+import styles from './Input.module.scss';
+import classNames from 'classnames';
 
 interface InputProps {
-  placeholder: string;
+  id?: string;
+  type: 'text' | 'email' | 'tel' | 'file';
+  placeholder?: string;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   register?: UseFormRegisterReturn;
+  setValue?: UseFormSetValue<FieldValues>;
+  value?: string | File;
   error?: {
     message?: string;
   };
 }
 
-export const Input: FC<InputProps> = ({ placeholder, register, error }) => {
+export const Input: FC<InputProps> = ({
+  id,
+  type,
+  placeholder,
+  onChange,
+  register,
+  error,
+  value,
+  setValue
+}) => {
+  useEffect(() => {
+    if (setValue && value) {
+      setValue(register!.name, value);
+    }
+  }, [value, setValue, register]);
+
   return (
-    <>
-      <input placeholder={placeholder} {...register} className={styles.Input} />
+    <div className={styles.inputWrapper}>
+      <input
+        id={id}
+        type={type}
+        onChange={onChange}
+        placeholder={placeholder}
+        {...register}
+        className={classNames(styles.Input, {
+          [styles.errorInput]: error
+        })}
+      />
       {error && <span>{error.message}</span>}
-    </>
+    </div>
   );
 };

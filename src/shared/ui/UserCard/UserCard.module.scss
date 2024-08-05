@@ -28,7 +28,7 @@
 
 .userImage {
   width: 70px;
-  height: 70px;
+  min-height: 70px;
   border-radius: 50%;
   overflow: hidden;
   @include FlexContainer();
@@ -41,6 +41,18 @@
 }
 
 .userContact {
+  width: 100%;
   @include FlexDirection();
   line-height: 26px;
+}
+
+.userName,
+.userEmail,
+.userRole,
+.userPhone {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
 }

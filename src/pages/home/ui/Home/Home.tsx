@@ -1,11 +1,11 @@
 // react
-import { FC } from "react";
+import { FC } from 'react';
 //ui
-import { Header } from "@/widgets/header/ui";
-import { CheerfulUsers } from "@/widgets/main/ui/CheerfulUsers";
-import { Footer } from "@/widgets/footer/ui";
+import { Header } from '@/widgets/header/ui';
+import { CheerfulUsers } from '@/widgets/main/ui/CheerfulUsers';
+import { Footer } from '@/widgets/footer/ui';
 // styles
-import styles from "./Home.module.scss";
+import styles from './Home.module.scss';
 
 interface HomeProps {}
 

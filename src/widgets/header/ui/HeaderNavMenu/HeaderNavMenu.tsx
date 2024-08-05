@@ -1,18 +1,31 @@
 // react
-import { FC } from "react";
+import { FC } from 'react';
+//context
+import { useScrollContext } from '@/app/providers/context/scroll/ScrollContext';
 //ui
-import { Button } from "@/shared/ui";
+import { Button } from '@/shared/ui';
 //assets
-import Logo from "@/shared/libs/assets/svg/Group.svg?react";
-import LogoText from "@/shared/libs/assets/svg/Vector.svg?react";
+import Logo from '@/shared/libs/assets/svg/Group.svg?react';
+import LogoText from '@/shared/libs/assets/svg/Vector.svg?react';
 // styles
-import styles from "./HeaderNavMenu.module.scss";
+import styles from './HeaderNavMenu.module.scss';
 
 interface HeaderNavMenuProps {}
 
 export const HeaderNavMenu: FC<HeaderNavMenuProps> = ({}) => {
-  const onGetUsersClick = () => {};
-  const onSignUpClick = () => {};
+  const { footerRef, usersRef } = useScrollContext();
+
+  const onGetUsersClick = () => {
+    if (usersRef.current) {
+      usersRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const onSignUpClick = () => {
+    if (footerRef.current) {
+      footerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className={styles.HeaderNavMenu}>

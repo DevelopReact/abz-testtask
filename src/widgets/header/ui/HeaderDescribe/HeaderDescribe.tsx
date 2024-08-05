@@ -1,14 +1,22 @@
 // react
-import { FC } from "react";
+import { FC } from 'react';
+//context
+import { useScrollContext } from '@/app/providers/context/scroll/ScrollContext';
 //ui
-import { Button } from "@/shared/ui";
+import { Button } from '@/shared/ui';
 // styles
-import styles from "./HeaderDescribe.module.scss";
+import styles from './HeaderDescribe.module.scss';
 
 interface HeaderDescribeProps {}
 
 export const HeaderDescribe: FC<HeaderDescribeProps> = ({}) => {
-  const onSignUpClick = () => {};
+  const { footerRef } = useScrollContext();
+
+  const onSignUpClick = () => {
+    if (footerRef.current) {
+      footerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className={styles.HeaderDescribe}>
@@ -20,7 +28,9 @@ export const HeaderDescribe: FC<HeaderDescribeProps> = ({}) => {
         mind. They should also be excited to learn, as the world of Front-End
         Development keeps evolving.
       </p>
-      <Button onClick={onSignUpClick}>Sign up</Button>
+      <Button type='button' onClick={onSignUpClick}>
+        Sign up
+      </Button>
     </div>
   );
 };

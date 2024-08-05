@@ -1,30 +1,23 @@
 // react
 import { FC } from 'react';
+//context
+import { useScrollContext } from '@/app/providers/context/scroll/ScrollContext';
 //ui
-import { UserCard } from '@/shared/ui/UserCard';
-import { Button } from '@/shared/ui';
+import { UsersList } from '@/entities/users/ui';
 // styles
 import styles from './CheerfulUsers.module.scss';
 
 interface CheerfulUsersProps {}
 
 export const CheerfulUsers: FC<CheerfulUsersProps> = ({}) => {
-  const onShowMoreClick = () => {};
+  const { usersRef } = useScrollContext();
 
   return (
-    <div className={styles.CheerfulUsers}>
+    <div className={styles.CheerfulUsers} ref={usersRef}>
       <div className={styles.titleCheerfulUsers}>
         <h1>Working with GET request</h1>
       </div>
-      <div className={styles.userCars}>
-        <UserCard />
-        <UserCard />
-        <UserCard />
-        <UserCard />
-        <UserCard />
-        <UserCard />
-      </div>
-      <Button onClick={onShowMoreClick}>Show more</Button>
+      <UsersList />
     </div>
   );
 };
