@@ -4,7 +4,6 @@ import { FC } from 'react';
 import classNames from 'classnames';
 // styles
 import styles from './RadioButton.module.scss';
-import { UseFormRegisterReturn } from 'react-hook-form';
 
 interface RadioButtonProps {
   label: string;

@@ -34,8 +34,12 @@ export const HeaderNavMenu: FC<HeaderNavMenuProps> = ({}) => {
         <LogoText />
       </div>
       <div className={styles.Menu}>
-        <Button onClick={onGetUsersClick}>Users</Button>
-        <Button onClick={onSignUpClick}>Sign up</Button>
+        <Button type='button' onClick={onGetUsersClick}>
+          Users
+        </Button>
+        <Button type='button' onClick={onSignUpClick}>
+          Sign up
+        </Button>
       </div>
     </div>
   );

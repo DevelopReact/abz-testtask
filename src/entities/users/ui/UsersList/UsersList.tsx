@@ -46,7 +46,7 @@ export const UsersList: FC<UsersListProps> = ({}) => {
               key={id}
               name={name}
               photo={photo}
-              position={position}
+              position={position!}
               email={email}
               phone={phone}
             />
